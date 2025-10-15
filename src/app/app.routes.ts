@@ -5,11 +5,16 @@ import { heroPageComponent } from './pages/hero/hero-page.component';
 
 export const routes: Routes = [
     {
-        path: './',
-        component: CounterComponent
+        path: '',
+        component: CounterComponent    
     },
     {
        path: 'hero',
        component: heroPageComponent
+    },
+    {
+        path: '**',
+        redirectTo: ''
     }
+
 ];
