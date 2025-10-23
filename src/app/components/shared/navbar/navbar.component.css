@@ -1,0 +1,11 @@
+.active {
+    color: yellow!important;
+}
+
+.navbar-brand{
+    color: white;
+}
+
+.navbar .nav-link {
+    color: white;
+}
