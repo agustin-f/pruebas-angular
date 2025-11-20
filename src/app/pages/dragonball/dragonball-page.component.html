@@ -14,12 +14,17 @@
     <div class="col-12">
         <h3>Listado</h3>
         <ol>
-            <li>Goku</li>
-            <li>Vegeta</li>
-            <li>Piccolo</li>
-            <li>Freezer</li>
-            <li>Cell</li>
-            <li>Majin Boo</li>
+            @for (character of characters(); track character.id) {
+                <li>
+                    <span>
+                        {{ character.name }}
+                    </span>
+                    <strong class="text-danger">
+                        {{ character.powerLevel }}
+                    </strong>
+                </li>
+            }
+       
         </ol>   
     </div>
 </section>
