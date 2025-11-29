@@ -1,0 +1,42 @@
+<h3>Agregar nombre: {{ name() }}</h3>
+
+<section class="row">
+  <div class="col-12 col-sm-6">
+    <input
+      type="text"
+      class="form-control"
+      [value]="name()"
+      (change)="name.set(txtName.value)"
+      (input)="name.set(txtName.value)"
+      #txtName
+    />
+
+    <h3>Agregar poder: {{ powerLevel() }}</h3>
+    <input
+      type="number"
+      class="form-control mt-2"
+      [value]="powerLevel()"
+      (change)="powerLevel.set(+txtpowerLevel.value)"
+      (input)="powerLevel.set(+txtpowerLevel.value)"
+      #txtpowerLevel
+    />
+    <button class="btn btn-primary mt-2">Agregar</button>
+  </div>
+</section>
+
+<section class="row mt-2">
+  <div class="col-12">
+    <h3>Listado</h3>
+    <ol>
+      @for (character of characters(); track character.id) {
+      @if(character.powerLevel > 1000) {
+      <li>
+        <span> {{ character.name }} </span>
+        <strong class="text-danger"> {{ character.powerLevel }} </strong>
+      </li>
+      } @else {
+      <li><strong>Aqui no hay nadie</strong></li>
+      }}
+    </ol>
+  </div>
+</section>
